@@ -3,41 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aroma Nobre - Guia de Perfumes Masculinos</title>
+    <title>Aroma Nobre - O Guia Definitivo da Perfumaria Masculina</title>
     <style>
         /* Variáveis de Cores (Modo Claro Padrão) */
         :root {
-            --bg-color: #f4f4f9;
+            --bg-color: #f8f9fa;
             --card-bg: #ffffff;
-            --text-color: #333333;
-            --text-muted: #666666;
-            --primary-color: #b8860b; /* Dourado escuro / Elegante */
+            --text-color: #2b2b2b;
+            --text-muted: #6c757d;
+            --primary-color: #b8860b; 
             --primary-hover: #996f08;
             --nav-bg: #111111;
             --nav-text: #ffffff;
-            --border-color: #dddddd;
-            --shadow: rgba(0, 0, 0, 0.1);
+            --border-color: #e5e5e5;
+            --shadow: rgba(0, 0, 0, 0.08);
         }
 
         /* Variáveis para o Modo Escuro */
         [data-theme="dark"] {
             --bg-color: #121212;
-            --card-bg: #1e1e1e;
+            --card-bg: #1a1a1a;
             --text-color: #e0e0e0;
-            --text-muted: #aaaaaa;
-            --primary-color: #d4af37; /* Dourado mais claro */
+            --text-muted: #a0a0a0;
+            --primary-color: #d4af37; 
             --primary-hover: #b89728;
-            --nav-bg: #1a1a1a;
+            --nav-bg: #0d0d0d;
             --nav-text: #ffffff;
-            --border-color: #333333;
-            --shadow: rgba(0, 0, 0, 0.5);
+            --border-color: #2c2c2c;
+            --shadow: rgba(0, 0, 0, 0.4);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
         body {
@@ -51,17 +51,20 @@
         header {
             background-color: var(--nav-bg);
             color: var(--nav-text);
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px var(--shadow);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: bold;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--primary-color);
         }
 
@@ -82,12 +85,11 @@
             color: var(--primary-color);
         }
 
-        /* Botão de Alternar Tema */
         .theme-toggle {
             background: none;
             border: 2px solid var(--primary-color);
             color: var(--primary-color);
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 1rem;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
@@ -101,40 +103,44 @@
 
         /* Conteúdo Principal */
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 2rem auto;
             padding: 0 1.5rem;
         }
 
         .hero {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
+            padding: 2rem 0;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
             color: var(--primary-color);
         }
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        /* Seções de Dicas */
+        /* Seções de Dicas Detalhadas */
         .tips-section {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 3rem;
-            box-shadow: 0 4px 6px var(--shadow);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 3.5rem;
+            box-shadow: 0 6px 15px var(--shadow);
         }
 
         .tips-section h2 {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--primary-color);
+            font-size: 1.8rem;
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 0.5rem;
             display: inline-block;
@@ -142,31 +148,41 @@
 
         .tips-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
         }
 
         .tip-card {
             background-color: var(--bg-color);
-            padding: 1.2rem;
-            border-radius: 6px;
+            padding: 1.5rem;
+            border-radius: 8px;
             border-left: 4px solid var(--primary-color);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .tip-card h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        /* Grade de Perfumes e Preços */
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
+            margin-bottom: 0.6rem;
+            font-size: 1.15rem;
             color: var(--text-color);
         }
 
+        .tip-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        /* Títulos de Categoria */
+        .category-title {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem 0;
+            color: var(--text-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        /* Grade de Perfumes */
         .perfume-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -175,9 +191,9 @@
 
         .perfume-card {
             background-color: var(--card-bg);
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 10px var(--shadow);
+            box-shadow: 0 4px 15px var(--shadow);
             border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
@@ -191,31 +207,40 @@
         .badge {
             background-color: var(--primary-color);
             color: #fff;
-            padding: 0.2rem 0.6rem;
+            padding: 0.25rem 0.6rem;
             font-size: 0.75rem;
             border-radius: 4px;
             text-transform: uppercase;
             font-weight: bold;
+            letter-spacing: 0.5px;
         }
 
         .perfume-info h3 {
-            font-size: 1.3rem;
-            margin: 0.5rem 0;
+            font-size: 1.35rem;
+            margin: 0.6rem 0 0.2rem 0;
         }
 
-        .perfume-info p {
+        .brand {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .description {
             color: var(--text-muted);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
-        .notes {
+        .notes, .performance {
             font-size: 0.85rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.6rem;
             color: var(--text-color);
         }
 
-        .notes strong {
+        .notes strong, .performance strong {
             color: var(--primary-color);
         }
 
@@ -239,9 +264,10 @@
             color: #fff;
             border: none;
             padding: 0.5rem 1rem;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 0.85rem;
         }
 
         .btn-buy:hover {
@@ -251,21 +277,26 @@
         /* Rodapé */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             background-color: var(--nav-bg);
             color: var(--nav-text);
-            margin-top: 3rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 0.9rem;
         }
     </style>
 </head>
-<body data-theme="dark"> <!-- Começa no modo escuro por padrão, estilo mais masculino/sofisticado -->
+<body data-theme="dark">
 
     <header>
-        <div class="logo">Aroma Nobre</div>
+        <div class="logo">AROMA NOBRE</div>
         <div class="header-controls">
             <nav>
-                <a href="#dicas">Dicas</a>
-                <a href="#perfumes">Catálogo & Preços</a>
+                <a href="#dicas">Guia & Dicas</a>
+                <a href="#catalogo">Catálogo (22 Opções)</a>
             </nav>
             <button class="theme-toggle" id="themeToggleBtn">Modo Claro</button>
         </div>
@@ -276,89 +307,330 @@
         <!-- Hero Section -->
         <section class="hero">
             <h1>A Assinatura do Homem Moderno</h1>
-            <p>Descubra os melhores perfumes masculinos, aprenda a fixar melhor a fragrância e escolha a essência ideal para cada ocasião.</p>
+            <p>Um guia completo de perfumaria masculina com 22 opções renomadas, dicas de fixação, projeção e notas olfativas para você escolher o perfume ideal.</p>
         </section>
 
-        <!-- Seção de Dicas -->
+        <!-- Seção de Dicas Detalhadas -->
         <section class="tips-section" id="dicas">
-            <h2>💡 Dicas de Ouro para Homens</h2>
+            <h2>💡 Guia Definitivo: Como Usar e Fixar Perfume</h2>
             <div class="tips-grid">
                 <div class="tip-card">
-                    <h3>Onde Aplicar</h3>
-                    <p>Aplique nos pontos de pulsação: pescoço, pulsos e atrás das orelhas. O calor corporal ajuda a projetar o cheiro.</p>
+                    <h3>1. Pontos de Pulsação</h3>
+                    <p>Aplique em áreas onde o sangue flui mais perto da pele (pescoço, pulsos, dobra do cotovelo e peito). O calor gera projeção contínua.</p>
                 </div>
                 <div class="tip-card">
-                    <h3>Não Esfregue</h3>
-                    <p>Nunca esfregue os pulsos após borrifar o perfume. Isso quebra as moléculas da fragrância, diminuindo a fixação.</p>
+                    <h3>2. Proibido Esfregar</h3>
+                    <p>Esfregar os pulsos após borrifar destrói as notas de topo (saída) e faz com que o perfume evapore muito mais rápido.</p>
                 </div>
                 <div class="tip-card">
-                    <h3>Hidratação é Chave</h3>
-                    <p>Peles hidratadas retêm perfume por muito mais tempo. Use um hidratante neutro antes de aplicar a fragrância.</p>
+                    <h3>3. O Segredo da Hidratação</h3>
+                    <p>Peles secas "amam" e consomem o perfume rapidamente. Use um hidratante sem cheiro ou óleo corporal antes de borrifar.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>4. Tipos de Concentração</h3>
+                    <p><strong>EDT (Eau de Toilette):</strong> 4 a 8h de fixação (mais fresco).<br><strong>EDP (Eau de Parfum):</strong> 8 a 12h (mais denso).<br><strong>Elixir/Parfum:</strong> Fixação extrema (+12h).</p>
                 </div>
             </div>
         </section>
 
-        <!-- Seção de Perfumes e Preços -->
-        <h2 class="section-title" id="perfumes">Seleção Exclusiva Masculina</h2>
-        
+        <!-- CATÁLOGO DE PERFUMES (22 OPÇÕES) -->
+        <div id="catalogo"></div>
+
+        <!-- CATEGORIA 1: AMADEIRADOS -->
+        <h2 class="category-title">🪵 Os Amadeirados (Elegância e Sofisticação)</h2>
         <div class="perfume-grid">
             
-            <!-- Perfume 1 -->
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Amadeirado Especiado</span>
+                    <h3>Sauvage Elixir</h3>
+                    <span class="brand">Dior</span>
+                    <p class="description">Extremamente concentrado, potente e marcante. Para homens que querem impor respeito à noite.</p>
+                    <div class="notes"><strong>Notas:</strong> Noz-moscada, Canela, Sândalo e Lavanda.</div>
+                    <div class="performance"><strong>Fixação:</strong> 14h+ | <strong>Projeção:</strong> Monstruosa</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 980,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Amadeirado Aromático</span>
+                    <h3>Bleu de Chanel EDP</h3>
+                    <span class="brand">Chanel</span>
+                    <p class="description">O coringa definitivo. Elegante, limpo e extremamente elogiado no ambiente corporativo.</p>
+                    <div class="notes"><strong>Notas:</strong> Toranja, Hortelã, Incenso e Cedro.</div>
+                    <div class="performance"><strong>Fixação:</strong> 9h | <strong>Projeção:</strong> Moderada/Alta</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 850,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Amadeirado Seco</span>
+                    <h3>Terre d'Hermès</h3>
+                    <span class="brand">Hermès</span>
+                    <p class="description">Um cheiro de terra molhada com laranjas amargas. Transmite maturidade, sucesso e seriedade.</p>
+                    <div class="notes"><strong>Notas:</strong> Laranja, Pimenta, Vetiver e Cedro.</div>
+                    <div class="performance"><strong>Fixação:</strong> 10h | <strong>Projeção:</strong> Moderada</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 720,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Amadeirado Chipre</span>
+                    <h3>Encre Noire</h3>
+                    <span class="brand">Lalique</span>
+                    <p class="description">Sombrio, misterioso e artístico. Baseado em madeiras escuras e vetiver puro.</p>
+                    <div class="notes"><strong>Notas:</strong> Cipreste, Vetiver, Almíscar e Madeira de Cashmere.</div>
+                    <div class="performance"><strong>Fixação:</strong> 8h | <strong>Projeção:</strong> Moderada</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 450,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Amadeirado Couro</span>
+                    <h3>Ombré Leather</h3>
+                    <span class="brand">Tom Ford</span>
+                    <p class="description">Luxuoso e ousado. Cheiro exato de jaqueta de couro nova combinada com jasmim silvestre.</p>
+                    <div class="notes"><strong>Notas:</strong> Cardamomo, Couro, Patchouli e Musgo.</div>
+                    <div class="performance"><strong>Fixação:</strong> 12h+ | <strong>Projeção:</strong> Alta</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 1.450,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
             <div class="perfume-card">
                 <div class="perfume-info">
                     <span class="badge">Amadeirado Intenso</span>
-                    <h3>Sauvage Elixir</h3>
-                    <p>Um rastro extraordinariamente rico e concentrado. Perfeito para noites frias e eventos formais de alto padrão.</p>
-                    <div class="notes">
-                        <strong>Notas:</strong> Lavanda, Noz-moscada, Sândalo e Patchouli.
-                    </div>
+                    <h3>Gentleman Eau de Parfum Reserve Privée</h3>
+                    <span class="brand">Givenchy</span>
+                    <p class="description">Inspirado em uísques finos. Extremamente sofisticado para encontros e jantares.</p>
+                    <div class="notes"><strong>Notas:</strong> Íris, Acorde de Uísque, Castanha e Âmbar.</div>
+                    <div class="performance"><strong>Fixação:</strong> 10h | <strong>Projeção:</strong> Alta</div>
                 </div>
-                <div class="price-footer">
-                    <span class="price">R$ 950,00</span>
-                    <button class="btn-buy">Ver Oferta</button>
-                </div>
-            </div>
-
-            <!-- Perfume 2 -->
-            <div class="perfume-card">
-                <div class="perfume-info">
-                    <span class="badge">Fresco / Versátil</span>
-                    <h3>Bleu de Chanel EDT</h3>
-                    <p>Um amadeirado aromático atemporal. Ideal para o ambiente de trabalho e uso diário com muita elegância.</p>
-                    <div class="notes">
-                        <strong>Notas:</strong> Hortelã, Toranja, Cedro e Incenso.
-                    </div>
-                </div>
-                <div class="price-footer">
-                    <span class="price">R$ 780,00</span>
-                    <button class="btn-buy">Ver Oferta</button>
-                </div>
-            </div>
-
-            <!-- Perfume 3 -->
-            <div class="perfume-card">
-                <div class="perfume-info">
-                    <span class="badge">Doce / Sedutor</span>
-                    <h3>The Most Wanted EDP</h3>
-                    <p>Intenso e marcante, feito para o homem que gosta de chamar atenção em encontros românticos e baladas.</p>
-                    <div class="notes">
-                        <strong>Notas:</strong> Cardamomo, Toffee e Madeira de Âmbar.
-                    </div>
-                </div>
-                <div class="price-footer">
-                    <span class="price">R$ 620,00</span>
-                    <button class="btn-buy">Ver Oferta</button>
-                </div>
+                <div class="price-footer"><span class="price">R$ 690,00</span><button class="btn-buy">Ver Preço</button></div>
             </div>
 
         </div>
+
+        <!-- CATEGORIA 2: FRESCOS E VERSÁTEIS -->
+        <h2 class="category-title">🌊 Os Frescos e Aquáticos (Dia a Dia e Calor)</h2>
+        <div class="perfume-grid">
+            
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Aquático Cítrico</span>
+                    <h3>Acqua di Giò Profondo</h3>
+                    <span class="brand">Giorgio Armani</span>
+                    <p class="description">A evolução marinha definitiva. Traz sensação de mar profundo, limpeza e vigor absoluto.</p>
+                    <div class="notes"><strong>Notas:</strong> Notas Marinhas, Bergamota, Alecrim e Patchouli.</div>
+                    <div class="performance"><strong>Fixação:</strong> 8h | <strong>Projeção:</strong> Moderada</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 680,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Cítrico Aromático</span>
+                    <h3>Allure Homme Sport</h3>
+                    <span class="brand">Chanel</span>
+                    <p class="description">O frescor cremoso mais elegante do mercado. Agrada a 100% das pessoas ao redor.</p>
+                    <div class="notes"><strong>Notas:</strong> Tangerina, Notas Arenosas, Almíscar Branco e Cedro.</div>
+                    <div class="performance"><strong>Fixação:</strong> 7h | <strong>Projeção:</strong> Moderada</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 790,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Fresco Enérgico</span>
+                    <h3>Versace Pour Homme</h3>
+                    <span class="brand">Versace</span>
+                    <p class="description">O rei do custo-benefício para o calor intenso do Brasil. Limpo, revigorante e luminoso.</p>
+                    <div class="notes"><strong>Notas:</strong> Limão de Amalfi, Néroli, Jacinto e Almíscar.</div>
+                    <div class="performance"><strong>Fixação:</strong> 6h | <strong>Projeção:</strong> Moderada</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 420,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Aquático Frutado</span>
+                    <h3>Light Blue Eau Intense</h3>
+                    <span class="brand">Dolce & Gabbana</span>
+                    <p class="description">Um toque salgado com toranja congelada. Fantástico para dias de praia ou piscina.</p>
+                    <div class="notes"><strong>Notas:</strong> Toranja, Mandarina, Água do Mar e Almíscar.</div>
+                    <div class="performance"><strong>Fixação:</strong> 8h | <strong>Projeção:</strong> Alta</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 540,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Aromático Fougére</span>
+                    <h3>Polo Blue EDP</h3>
+                    <span class="brand">Ralph Lauren</span>
+                    <p class="description">Fresco, porém encorpado com camurça e vetiver. Um clássico moderno muito versátil.</p>
+                    <div class="notes"><strong>Notas:</strong> Melão, Pepino, Verbena, Camurça e Patchouli.</div>
+                    <div class="performance"><strong>Fixação:</strong> 8h | <strong>Projeção:</strong> Moderada</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 580,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Fresco Elegante</span>
+                    <h3>L'Eau d'Issey Pour Homme</h3>
+                    <span class="brand">Issey Miyake</span>
+                    <p class="description">Conhecido pelo toque cítrico-amargo inconfundível de yuzu e madeiras japonesas.</p>
+                    <div class="notes"><strong>Notas:</strong> Yuzu, Limão, Canela, Noz-moscada e Vetiver.</div>
+                    <div class="performance"><strong>Fixação:</strong> 7h | <strong>Projeção:</strong> Moderada</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 490,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+        </div>
+
+        <!-- CATEGORIA 3: DOCES, BALADEIROS E SEDUTORES -->
+        <h2 class="category-title">🔥 Os Doces e Sedutores (Noite e Encontros)</h2>
+        <div class="perfume-grid">
+            
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Doce Especiado</span>
+                    <h3>The Most Wanted EDP</h3>
+                    <span class="brand">Azzaro</span>
+                    <p class="description">Ímã de elogios. Notas adocicadas de baunilha caramelada com cardamomo quente.</p>
+                    <div class="notes"><strong>Notas:</strong> Cardamomo, Toffee e Madeira de Âmbar.</div>
+                    <div class="performance"><strong>Fixação:</strong> 10h+ | <strong>Projeção:</strong> Alta</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 620,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Oriental Baunilha</span>
+                    <h3>Ultra Male</h3>
+                    <span class="brand">Jean Paul Gaultier</span>
+                    <p class="description">Poderoso, baladeiro, com pêra suculenta misturada a uma baunilha hiper atraente.</p>
+                    <div class="notes"><strong>Notas:</strong> Pêra, Hortelã, Lavanda, Canela e Baunilha.</div>
+                    <div class="performance"><strong>Fixação:</strong> 10h | <strong>Projeção:</strong> Forte</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 650,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Frutado Marcante</span>
+                    <h3>Eros EDP</h3>
+                    <span class="brand">Versace</span>
+                    <p class="description">Uma explosão de menta com maçã verde e fava tonka. Jovial, expansivo e festivo.</p>
+                    <div class="notes"><strong>Notas:</strong> Menta, Maçã Verde, Fava Tonka e Baunilha de Madagascar.</div>
+                    <div class="performance"><strong>Fixação:</strong> 9h | <strong>Projeção:</strong> Alta</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 580,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Gourmand Quente</span>
+                    <h3>Stronger With You Intensely</h3>
+                    <span class="brand">Emporio Armani</span>
+                    <p class="description">Cheiro que remete a caramelo, canela e nozes tostadas. Perfeito para dias de frio rigoroso.</p>
+                    <div class="notes"><strong>Notas:</strong> Pimenta Rosa, Canela, Lavanda, Baunilha e Âmbar.</div>
+                    <div class="performance"><strong>Fixação:</strong> 11h | <strong>Projeção:</strong> Alta</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 710,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Oriental Especiado</span>
+                    <h3>Spicebomb Extreme</h3>
+                    <span class="brand">Viktor&Rolf</span>
+                    <p class="description">Uma granja de especiarias quentes com tabaco e baunilha escura. Virilidade pura.</p>
+                    <div class="notes"><strong>Notas:</strong> Cominho, Canela, Tabaco, Baunilha e Bourbon.</div>
+                    <div class="performance"><strong>Fixação:</strong> 12h | <strong>Projeção:</strong> Muito Forte</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 840,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Amadeirado Doce</span>
+                    <h3>One Million Elixir</h3>
+                    <span class="brand">Paco Rabanne</span>
+                    <p class="description">Mais denso, rico e adocicado que o tradicional. Foco total em notas licorosas e florais brancos.</p>
+                    <div class="notes"><strong>Notas:</strong> Davana, Maçã, Rosa Damascena, Baunilha e Fava Tonka.</div>
+                    <div class="performance"><strong>Fixação:</strong> 10h | <strong>Projeção:</strong> Alta</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 690,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+        </div>
+
+        <!-- CATEGORIA 4: OS MONSTROS DE PROJEÇÃO / NICHO / PODER -->
+        <h2 class="category-title">💎 Os Poderosos e Exclusivos (Prestígio e Poder)</h2>
+        <div class="perfume-grid">
+            
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Frutado Defumado</span>
+                    <h3>Aventus</h3>
+                    <span class="brand">Creed</span>
+                    <p class="description">O perfume de nicho mais famoso do mundo. Abacaxi defumado com bétula. O cheiro do sucesso.</p>
+                    <div class="notes"><strong>Notas:</strong> Abacaxi, Bergamota, Bétula, Almíscar e Ambargris.</div>
+                    <div class="performance"><strong>Fixação:</strong> 9h | <strong>Projeção:</strong> Marcante</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 2.400,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Âmbar Especiado</span>
+                    <h3>Herod</h3>
+                    <span class="brand">Parfums de Marly</span>
+                    <p class="description">Tabaco nobre misturado com baunilha cremosa e incenso. Aristocracia pura em frasco.</p>
+                    <div class="notes"><strong>Notas:</strong> Canela, Pimenta, Folha de Tabaco, Incenso e Baunilha.</div>
+                    <div class="performance"><strong>Fixação:</strong> 11h | <strong>Projeção:</strong> Moderada/Alta</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 1.950,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Frutado Elegante</span>
+                    <h3>Club de Nuit Intense Man EDP</h3>
+                    <span class="brand">Armaf</span>
+                    <p class="description">O clone mais famoso e elogiado do mundo do Creed Aventus. Excelente performance pelo preço.</p>
+                    <div class="notes"><strong>Notas:</strong> Limão, Abacaxi, Rosa, Almíscar e Âmbar Cinzento.</div>
+                    <div class="performance"><strong>Fixação:</strong> 10h | <strong>Projeção:</strong> Alta</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 380,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+            <div class="perfume-card">
+                <div class="perfume-info">
+                    <span class="badge">Amadeirado Especiado</span>
+                    <h3>Bvlgari Man in Black</h3>
+                    <span class="brand">Bvlgari</span>
+                    <p class="description">Inspirado no deus romano do fogo. Notas de rum com especiarias e couro escuro.</p>
+                    <div class="notes"><strong>Notas:</strong> Tabaco, Especiarias, Rum, Couro, Íris e Tuberosa.</div>
+                    <div class="performance"><strong>Fixação:</strong> 9h | <strong>Projeção:</strong> Moderada</div>
+                </div>
+                <div class="price-footer"><span class="price">R$ 670,00</span><button class="btn-buy">Ver Preço</button></div>
+            </div>
+
+        </div>
+
     </div>
 
     <footer>
         <p>&copy; 2026 Aroma Nobre - Todos os direitos reservados. O guia definitivo do homem elegante.</p>
     </footer>
 
-    <!-- Script para Alternar entre Modo Claro e Escuro -->
+    <!-- Script do Botão de Alternância de Tema -->
     <script>
         const themeToggleBtn = document.getElementById('themeToggleBtn');
         const body = document.body;
